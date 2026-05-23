@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Sezione_Featured": {
+      "type": "component",
+      "component": "section.section",
+      "repeatable": false
+    },
+    "Sezione_Progetti": {
+      "type": "component",
+      "component": "section.section",
+      "repeatable": false
+    },
+    "Sezione_Prodotti": {
+      "type": "component",
+      "component": "section.section",
+      "repeatable": false
+    },
+    "Sezione_Eventi": {
+      "type": "component",
+      "component": "section.section",
+      "repeatable": false
+    },
+    "Sezione_Codici": {
+      "type": "component",
+      "component": "section.section",
+      "repeatable": false
+    },
+    "Sezione_Ricerche": {
+      "type": "component",
+      "component": "section.section",
+      "repeatable": false
+    }
+  }
+}

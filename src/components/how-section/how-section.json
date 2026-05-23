@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_how_section_how_sections",
+  "info": {
+    "displayName": "how-section",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "temi": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tema.tema"
+    }
+  },
+  "config": {}
+}

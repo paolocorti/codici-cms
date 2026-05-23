@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__webclaw__batch",
+      "mcp__webclaw__extract",
+      "Bash(python3:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tipos",
+  "info": {
+    "singularName": "tipo",
+    "pluralName": "tipos",
+    "displayName": "Tipo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

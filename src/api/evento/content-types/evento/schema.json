@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "eventi",
+  "info": {
+    "singularName": "evento",
+    "pluralName": "eventi",
+    "displayName": "Evento"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "where": {
+      "type": "text"
+    },
+    "info": {
+      "type": "blocks"
+    },
+    "progetto": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::progetto.progetto",
+      "inversedBy": "eventi"
+    },
+    "featured": {
+      "type": "boolean"
+    }
+  }
+}

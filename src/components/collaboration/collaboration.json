@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_collaboration_collaborations",
+  "info": {
+    "displayName": "collaboration",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

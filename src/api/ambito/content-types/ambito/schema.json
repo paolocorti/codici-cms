@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ambitos",
+  "info": {
+    "singularName": "ambito",
+    "pluralName": "ambitos",
+    "displayName": "Ambito"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

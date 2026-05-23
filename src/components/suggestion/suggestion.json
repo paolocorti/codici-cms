@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_suggestion_suggestions",
+  "info": {
+    "displayName": "Suggestion",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prodotti",
+  "info": {
+    "singularName": "prodotto",
+    "pluralName": "prodotti",
+    "displayName": "Prodotto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "progetto": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::progetto.progetto",
+      "inversedBy": "prodotti"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "featured": {
+      "type": "boolean"
+    }
+  }
+}

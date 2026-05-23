@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Team"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bio": {
+      "type": "text"
+    },
+    "email": {
+      "type": "string"
+    },
+    "progetti": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::progetto.progetto",
+      "mappedBy": "teams"
+    },
+    "suggestions": {
+      "type": "component",
+      "component": "suggestion.suggestion",
+      "repeatable": true
+    }
+  }
+}

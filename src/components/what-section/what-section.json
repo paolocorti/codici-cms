@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_what_section_what_sections",
+  "info": {
+    "displayName": "what-section",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "service": {
+      "type": "component",
+      "component": "service.service",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "temas",
+  "info": {
+    "singularName": "tema",
+    "pluralName": "temas",
+    "displayName": "Tema"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

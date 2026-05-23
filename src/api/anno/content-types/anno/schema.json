@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "annos",
+  "info": {
+    "singularName": "anno",
+    "pluralName": "annos",
+    "displayName": "Anno"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

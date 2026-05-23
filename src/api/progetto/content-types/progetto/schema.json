@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "progettos",
+  "info": {
+    "singularName": "progetto",
+    "pluralName": "progettos",
+    "displayName": "Progetto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "uid"
+    },
+    "title": {
+      "type": "string"
+    },
+    "main_picture": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "project_status": {
+      "type": "enumeration",
+      "enum": [
+        "archived",
+        "in-progress"
+      ]
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "ambiti": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ambito.ambito"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "inversedBy": "progetti"
+    },
+    "prodotti": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::prodotto.prodotto",
+      "mappedBy": "progetto"
+    },
+    "eventi": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::evento.evento",
+      "mappedBy": "progetto"
+    },
+    "calls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::call.call"
+    },
+    "updates": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::update.update"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "areas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::area.area"
+    },
+    "anni": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anno.anno"
+    },
+    "temi": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tema.tema"
+    }
+  }
+}

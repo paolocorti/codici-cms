@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team.team"
+    },
+    "Sezione_Cosa": {
+      "type": "component",
+      "component": "what-section.what-section",
+      "repeatable": false
+    },
+    "Sezione_Come": {
+      "type": "component",
+      "component": "how-section.how-section",
+      "repeatable": false
+    },
+    "Sezione_Organizzazione": {
+      "type": "component",
+      "component": "organization.organization",
+      "repeatable": false
+    },
+    "Sezione_Collaborazioni": {
+      "type": "component",
+      "component": "collaboration.collaboration",
+      "repeatable": false
+    }
+  }
+}
