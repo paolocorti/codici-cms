@@ -18,6 +18,9 @@
     "name": {
       "type": "string"
     },
+    "featured": {
+      "type": "boolean"
+    },
     "content": {
       "type": "blocks"
     },
@@ -53,9 +56,6 @@
         "videos",
         "audios"
       ]
-    },
-    "featured": {
-      "type": "boolean"
     }
   }
 }

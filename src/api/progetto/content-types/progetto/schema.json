@@ -18,6 +18,9 @@
     "title": {
       "type": "string"
     },
+    "featured": {
+      "type": "boolean"
+    },
     "main_picture": {
       "type": "media",
       "multiple": true,
@@ -70,9 +73,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::update.update"
-    },
-    "featured": {
-      "type": "boolean"
     },
     "areas": {
       "type": "relation",

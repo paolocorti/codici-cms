@@ -11,8 +11,15 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "uid": {
+      "type": "uid",
+      "targetField": "title"
+    },
     "title": {
       "type": "string"
+    },
+    "featured": {
+      "type": "boolean"
     },
     "start_date": {
       "type": "datetime"

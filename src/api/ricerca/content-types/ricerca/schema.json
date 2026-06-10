@@ -18,6 +18,9 @@
     "title": {
       "type": "string"
     },
+    "featured": {
+      "type": "boolean"
+    },
     "content": {
       "type": "blocks"
     },

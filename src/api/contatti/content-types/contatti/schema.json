@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "contattis",
+  "info": {
+    "singularName": "contatti",
+    "pluralName": "contattis",
+    "displayName": "Contatti"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

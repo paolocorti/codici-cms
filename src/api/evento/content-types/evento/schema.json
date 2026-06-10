@@ -11,8 +11,15 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "uid": {
+      "type": "uid",
+      "targetField": "name"
+    },
     "name": {
       "type": "string"
+    },
+    "featured": {
+      "type": "boolean"
     },
     "picture": {
       "type": "media",
@@ -54,9 +61,6 @@
       "relation": "manyToOne",
       "target": "api::progetto.progetto",
       "inversedBy": "eventi"
-    },
-    "featured": {
-      "type": "boolean"
     }
   }
 }

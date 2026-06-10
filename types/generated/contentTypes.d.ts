@@ -601,6 +601,7 @@ export interface ApiCallCall extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     end_date: Schema.Attribute.DateTime;
+    featured: Schema.Attribute.Boolean;
     link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::call.call'> &
@@ -609,6 +610,7 @@ export interface ApiCallCall extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     start_date: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    uid: Schema.Attribute.UID<'title'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -676,6 +678,7 @@ export interface ApiEventoEvento extends Struct.CollectionTypeSchema {
     progetto: Schema.Attribute.Relation<'manyToOne', 'api::progetto.progetto'>;
     publishedAt: Schema.Attribute.DateTime;
     start_date: Schema.Attribute.Date;
+    uid: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -797,6 +800,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    uid: Schema.Attribute.UID<'title'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -902,6 +906,7 @@ export interface ApiRicercaRicerca extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    featured: Schema.Attribute.Boolean;
     link: Schema.Attribute.String;
     links: Schema.Attribute.Component<'links.links', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

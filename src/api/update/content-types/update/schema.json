@@ -15,6 +15,9 @@
       "type": "uid",
       "targetField": "title"
     },
+    "featured": {
+      "type": "boolean"
+    },
     "date": {
       "type": "datetime"
     },
@@ -23,9 +26,6 @@
     },
     "description": {
       "type": "text"
-    },
-    "featured": {
-      "type": "boolean"
     }
   }
 }
