@@ -11,6 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "uid": {
+      "type": "uid",
+      "targetField": "title"
+    },
     "title": {
       "type": "string"
     },

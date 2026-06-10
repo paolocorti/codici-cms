@@ -4,7 +4,16 @@
       "mcp__webclaw__batch",
       "mcp__webclaw__extract",
       "Bash(python3:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(ls /Users/paolocorti/dev/)",
+      "Bash(mkdir -p /Users/paolocorti/dev/codici/apps)",
+      "Bash(npm create *)",
+      "Bash(npx @tanstack/cli@latest create --help)",
+      "Bash(npx @tanstack/cli@latest create codici-app --framework React --package-manager npm --no-install --no-examples --non-interactive)",
+      "Bash(npm install *)",
+      "Bash(mv \"/Users/paolocorti/dev/codici/apps/codici-app/src/routes/progetti.\\\\$documentId.tsx\" \"/Users/paolocorti/dev/codici/apps/codici-app/src/routes/progetti/\\\\$documentId.tsx\")",
+      "Bash(npm show *)",
+      "Bash(npm search *)"
     ]
   }
 }

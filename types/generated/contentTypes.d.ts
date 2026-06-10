@@ -807,6 +807,7 @@ export interface ApiProdottoProdotto extends Struct.CollectionTypeSchema {
     picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     progetto: Schema.Attribute.Relation<'manyToOne', 'api::progetto.progetto'>;
     publishedAt: Schema.Attribute.DateTime;
+    uid: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -850,7 +851,7 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
     teams: Schema.Attribute.Relation<'manyToMany', 'api::team.team'>;
     temi: Schema.Attribute.Relation<'oneToMany', 'api::tema.tema'>;
     title: Schema.Attribute.String;
-    uid: Schema.Attribute.UID;
+    uid: Schema.Attribute.UID<'title'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -888,6 +889,7 @@ export interface ApiRicercaRicerca extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     tipi: Schema.Attribute.Relation<'oneToMany', 'api::tipo.tipo'>;
     title: Schema.Attribute.String;
+    uid: Schema.Attribute.UID<'title'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
