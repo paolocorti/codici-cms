@@ -11,6 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "uid": {
+      "type": "uid",
+      "targetField": "title"
+    },
     "date": {
       "type": "datetime"
     },
@@ -19,6 +23,9 @@
     },
     "description": {
       "type": "text"
+    },
+    "featured": {
+      "type": "boolean"
     }
   }
 }

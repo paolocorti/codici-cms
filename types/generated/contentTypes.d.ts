@@ -615,6 +615,34 @@ export interface ApiCallCall extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContattiContatti extends Struct.SingleTypeSchema {
+  collectionName: 'contattis';
+  info: {
+    displayName: 'Contatti';
+    pluralName: 'contattis';
+    singularName: 'contatti';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contatti.contatti'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventoEvento extends Struct.CollectionTypeSchema {
   collectionName: 'eventi';
   info: {
@@ -996,6 +1024,7 @@ export interface ApiUpdateUpdate extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime;
     description: Schema.Attribute.Text;
+    featured: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1004,6 +1033,7 @@ export interface ApiUpdateUpdate extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    uid: Schema.Attribute.UID<'title'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1527,6 +1557,7 @@ declare module '@strapi/strapi' {
       'api::anno.anno': ApiAnnoAnno;
       'api::area.area': ApiAreaArea;
       'api::call.call': ApiCallCall;
+      'api::contatti.contatti': ApiContattiContatti;
       'api::evento.evento': ApiEventoEvento;
       'api::home.home': ApiHomeHome;
       'api::organizzazione.organizzazione': ApiOrganizzazioneOrganizzazione;
