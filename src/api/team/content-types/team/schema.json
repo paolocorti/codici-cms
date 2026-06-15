@@ -37,7 +37,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::progetto.progetto",
-      "mappedBy": "teams"
+      "mappedBy": "team_Codici"
     },
     "suggestions": {
       "type": "component",

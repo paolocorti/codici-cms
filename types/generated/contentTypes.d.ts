@@ -886,7 +886,7 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
     prodotti: Schema.Attribute.Relation<'oneToMany', 'api::prodotto.prodotto'>;
     project_status: Schema.Attribute.Enumeration<['archived', 'in-progress']>;
     publishedAt: Schema.Attribute.DateTime;
-    teams: Schema.Attribute.Relation<'manyToMany', 'api::team.team'>;
+    team_Codici: Schema.Attribute.Relation<'manyToMany', 'api::team.team'>;
     temi: Schema.Attribute.Relation<'oneToMany', 'api::tema.tema'>;
     territori: Schema.Attribute.Relation<'oneToMany', 'api::ambito.ambito'>;
     title: Schema.Attribute.String;

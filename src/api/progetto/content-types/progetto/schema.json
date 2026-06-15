@@ -46,7 +46,7 @@
       "relation": "oneToMany",
       "target": "api::ambito.ambito"
     },
-    "teams": {
+    "team_Codici": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::team.team",
