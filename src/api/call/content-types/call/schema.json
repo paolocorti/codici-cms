@@ -42,6 +42,19 @@
     },
     "link": {
       "type": "string"
+    },
+    "progetto": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::progetto.progetto",
+      "inversedBy": "calls"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "for-job"
+      ]
     }
   }
 }

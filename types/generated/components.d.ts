@@ -73,7 +73,6 @@ export interface HowSectionHowSection extends Struct.ComponentSchema {
   attributes: {
     content: Schema.Attribute.Blocks;
     picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    temi: Schema.Attribute.Relation<'oneToOne', 'api::tema.tema'>;
     title: Schema.Attribute.String;
   };
 }
@@ -105,7 +104,6 @@ export interface OrganizationOrganization extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.Blocks;
-    picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -192,7 +190,6 @@ export interface WhatSectionWhatSection extends Struct.ComponentSchema {
   attributes: {
     content: Schema.Attribute.Blocks;
     picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    service: Schema.Attribute.Component<'service.service', true>;
     title: Schema.Attribute.String;
   };
 }

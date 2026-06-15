@@ -41,7 +41,7 @@
     "content": {
       "type": "blocks"
     },
-    "ambiti": {
+    "territori": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::ambito.ambito"
@@ -67,12 +67,14 @@
     "calls": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::call.call"
+      "target": "api::call.call",
+      "mappedBy": "progetto"
     },
     "updates": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::update.update"
+      "target": "api::update.update",
+      "mappedBy": "progetto"
     },
     "areas": {
       "type": "relation",

@@ -21,11 +21,6 @@
     },
     "content": {
       "type": "blocks"
-    },
-    "service": {
-      "type": "component",
-      "component": "service.service",
-      "repeatable": true
     }
   },
   "config": {}

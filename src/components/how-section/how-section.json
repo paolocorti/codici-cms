@@ -21,11 +21,6 @@
         "videos",
         "audios"
       ]
-    },
-    "temi": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::tema.tema"
     }
   },
   "config": {}

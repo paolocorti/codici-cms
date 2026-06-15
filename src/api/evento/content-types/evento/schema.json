@@ -40,6 +40,9 @@
     "end_date": {
       "type": "date"
     },
+    "where": {
+      "type": "text"
+    },
     "gallery": {
       "type": "media",
       "multiple": true,
@@ -50,8 +53,15 @@
         "audios"
       ]
     },
-    "where": {
-      "type": "text"
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "info": {
       "type": "blocks"

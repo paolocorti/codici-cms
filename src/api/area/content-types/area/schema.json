@@ -13,6 +13,9 @@
   "attributes": {
     "value": {
       "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

@@ -510,7 +510,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
 export interface ApiAmbitoAmbito extends Struct.CollectionTypeSchema {
   collectionName: 'ambitos';
   info: {
-    displayName: 'Ambito';
+    displayName: 'Territorio';
     pluralName: 'ambitos';
     singularName: 'ambito';
   };
@@ -574,6 +574,7 @@ export interface ApiAreaArea extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::area.area'> &
       Schema.Attribute.Private;
@@ -607,9 +608,11 @@ export interface ApiCallCall extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::call.call'> &
       Schema.Attribute.Private;
     picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    progetto: Schema.Attribute.Relation<'manyToOne', 'api::progetto.progetto'>;
     publishedAt: Schema.Attribute.DateTime;
     start_date: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['standard', 'for-job']>;
     uid: Schema.Attribute.UID<'title'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -673,6 +676,10 @@ export interface ApiEventoEvento extends Struct.CollectionTypeSchema {
       'api::evento.evento'
     > &
       Schema.Attribute.Private;
+    logos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     name: Schema.Attribute.String;
     picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     progetto: Schema.Attribute.Relation<'manyToOne', 'api::progetto.progetto'>;
@@ -857,7 +864,6 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    ambiti: Schema.Attribute.Relation<'oneToMany', 'api::ambito.ambito'>;
     anni: Schema.Attribute.Relation<'oneToMany', 'api::anno.anno'>;
     areas: Schema.Attribute.Relation<'oneToMany', 'api::area.area'>;
     calls: Schema.Attribute.Relation<'oneToMany', 'api::call.call'>;
@@ -882,6 +888,7 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     teams: Schema.Attribute.Relation<'manyToMany', 'api::team.team'>;
     temi: Schema.Attribute.Relation<'oneToMany', 'api::tema.tema'>;
+    territori: Schema.Attribute.Relation<'oneToMany', 'api::ambito.ambito'>;
     title: Schema.Attribute.String;
     uid: Schema.Attribute.UID<'title'>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1023,22 +1030,49 @@ export interface ApiUpdateUpdate extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    date: Schema.Attribute.DateTime;
-    description: Schema.Attribute.Text;
-    featured: Schema.Attribute.Boolean;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::update.update'
-    > &
-      Schema.Attribute.Private;
+    date: Schema.Attribute.DateTime &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    featured: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::update.update'>;
+    progetto: Schema.Attribute.Relation<'manyToOne', 'api::progetto.progetto'>;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    uid: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    uid: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
