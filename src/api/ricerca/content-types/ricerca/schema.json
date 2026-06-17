@@ -34,8 +34,10 @@
         "audios"
       ]
     },
-    "link": {
-      "type": "string"
+    "cta": {
+      "type": "component",
+      "component": "links.cta",
+      "repeatable": false
     },
     "links": {
       "type": "component",

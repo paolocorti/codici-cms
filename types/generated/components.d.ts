@@ -77,6 +77,17 @@ export interface HowSectionHowSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LinksCta extends Struct.ComponentSchema {
+  collectionName: 'components_links_ctas';
+  info: {
+    displayName: 'cta';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface LinksLinks extends Struct.ComponentSchema {
   collectionName: 'components_links_links';
   info: {
@@ -204,6 +215,7 @@ declare module '@strapi/strapi' {
       'featured-events.featured-events': FeaturedEventsFeaturedEvents;
       'featured-projects.featured-projects': FeaturedProjectsFeaturedProjects;
       'how-section.how-section': HowSectionHowSection;
+      'links.cta': LinksCta;
       'links.links': LinksLinks;
       'list.list': ListList;
       'organization.organization': OrganizationOrganization;

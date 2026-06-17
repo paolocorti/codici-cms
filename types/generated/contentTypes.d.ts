@@ -918,8 +918,8 @@ export interface ApiRicercaRicerca extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'links.cta', false>;
     featured: Schema.Attribute.Boolean;
-    link: Schema.Attribute.String;
     links: Schema.Attribute.Component<'links.links', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
