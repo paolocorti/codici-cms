@@ -864,8 +864,8 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    anno_fine: Schema.Attribute.Integer;
-    anno_inizio: Schema.Attribute.Integer;
+    anno_fine: Schema.Attribute.String;
+    anno_inizio: Schema.Attribute.String;
     areas: Schema.Attribute.Relation<'oneToMany', 'api::area.area'>;
     calls: Schema.Attribute.Relation<'oneToMany', 'api::call.call'>;
     content: Schema.Attribute.Blocks;
@@ -874,12 +874,14 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     eventi: Schema.Attribute.Relation<'oneToMany', 'api::evento.evento'>;
     featured: Schema.Attribute.Boolean;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::progetto.progetto'
     > &
       Schema.Attribute.Private;
+    loghi: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     main_picture: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

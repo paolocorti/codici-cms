@@ -32,10 +32,10 @@
       ]
     },
     "anno_inizio": {
-      "type": "integer"
+      "type": "string"
     },
     "anno_fine": {
-      "type": "integer"
+      "type": "string"
     },
     "territori": {
       "type": "relation",
@@ -61,6 +61,9 @@
     },
     "content": {
       "type": "blocks"
+    },
+    "link": {
+      "type": "string"
     },
     "team_Codici": {
       "type": "relation",
@@ -101,6 +104,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::persone.persone"
+    },
+    "loghi": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
