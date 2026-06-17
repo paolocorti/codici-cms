@@ -31,6 +31,16 @@
         "audios"
       ]
     },
+    "anni": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anno.anno"
+    },
+    "territori": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ambito.ambito"
+    },
     "project_status": {
       "type": "enumeration",
       "enum": [
@@ -38,13 +48,18 @@
         "in-progress"
       ]
     },
-    "content": {
-      "type": "blocks"
-    },
-    "territori": {
+    "temi": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::ambito.ambito"
+      "target": "api::tema.tema"
+    },
+    "areas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::area.area"
+    },
+    "content": {
+      "type": "blocks"
     },
     "team_Codici": {
       "type": "relation",
@@ -76,20 +91,15 @@
       "target": "api::update.update",
       "mappedBy": "progetto"
     },
-    "areas": {
+    "organizzazioni": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::area.area"
+      "target": "api::organizzazione.organizzazione"
     },
-    "anni": {
+    "persone": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::anno.anno"
-    },
-    "temi": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::tema.tema"
+      "target": "api::persone.persone"
     }
   }
 }

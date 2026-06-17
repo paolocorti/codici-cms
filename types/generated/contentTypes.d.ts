@@ -883,6 +883,11 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    organizzazioni: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organizzazione.organizzazione'
+    >;
+    persone: Schema.Attribute.Relation<'oneToMany', 'api::persone.persone'>;
     prodotti: Schema.Attribute.Relation<'oneToMany', 'api::prodotto.prodotto'>;
     project_status: Schema.Attribute.Enumeration<['archived', 'in-progress']>;
     publishedAt: Schema.Attribute.DateTime;
@@ -984,6 +989,7 @@ export interface ApiTemaTema extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    descrizione: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::tema.tema'> &
       Schema.Attribute.Private;
