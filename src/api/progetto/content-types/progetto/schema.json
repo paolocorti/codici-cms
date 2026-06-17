@@ -31,10 +31,11 @@
         "audios"
       ]
     },
-    "anni": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::anno.anno"
+    "anno_inizio": {
+      "type": "integer"
+    },
+    "anno_fine": {
+      "type": "integer"
     },
     "territori": {
       "type": "relation",

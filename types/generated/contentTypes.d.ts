@@ -864,7 +864,8 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    anni: Schema.Attribute.Relation<'oneToMany', 'api::anno.anno'>;
+    anno_fine: Schema.Attribute.Integer;
+    anno_inizio: Schema.Attribute.Integer;
     areas: Schema.Attribute.Relation<'oneToMany', 'api::area.area'>;
     calls: Schema.Attribute.Relation<'oneToMany', 'api::call.call'>;
     content: Schema.Attribute.Blocks;
