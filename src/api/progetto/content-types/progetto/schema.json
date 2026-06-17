@@ -21,14 +21,11 @@
     "featured": {
       "type": "boolean"
     },
-    "main_picture": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+    "project_status": {
+      "type": "enumeration",
+      "enum": [
+        "archived",
+        "in-progress"
       ]
     },
     "anno_inizio": {
@@ -42,22 +39,25 @@
       "relation": "oneToMany",
       "target": "api::ambito.ambito"
     },
-    "project_status": {
-      "type": "enumeration",
-      "enum": [
-        "archived",
-        "in-progress"
-      ]
+    "areas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::area.area"
     },
     "temi": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::tema.tema"
     },
-    "areas": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::area.area"
+    "main_picture": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "content": {
       "type": "blocks"
