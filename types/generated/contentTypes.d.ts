@@ -869,6 +869,7 @@ export interface ApiProgettoProgetto extends Struct.CollectionTypeSchema {
     areas: Schema.Attribute.Relation<'oneToMany', 'api::area.area'>;
     calls: Schema.Attribute.Relation<'oneToMany', 'api::call.call'>;
     content: Schema.Attribute.Blocks;
+    correlati: Schema.Attribute.Relation<'oneToMany', 'api::progetto.progetto'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

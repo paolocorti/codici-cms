@@ -114,6 +114,11 @@
         "videos",
         "audios"
       ]
+    },
+    "correlati": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::progetto.progetto"
     }
   }
 }
