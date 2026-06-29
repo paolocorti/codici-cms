@@ -17,11 +17,6 @@
     "description": {
       "type": "text"
     },
-    "teams": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::team.team"
-    },
     "Sezione_Cosa": {
       "type": "component",
       "component": "what-section.what-section",
@@ -36,6 +31,11 @@
       "type": "component",
       "component": "organization.organization",
       "repeatable": false
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team.team"
     },
     "Sezione_Collaborazioni": {
       "type": "component",

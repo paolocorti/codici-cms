@@ -77,6 +77,19 @@ export interface HowSectionHowSection extends Struct.ComponentSchema {
   };
 }
 
+export interface IndirizziMailIndirizziMail extends Struct.ComponentSchema {
+  collectionName: 'components_indirizzi_mail_indirizzi_mails';
+  info: {
+    displayName: 'indirizzi_mail';
+    icon: 'envelop';
+  };
+  attributes: {
+    descrizione: Schema.Attribute.String;
+    mail: Schema.Attribute.String;
+    nome: Schema.Attribute.String;
+  };
+}
+
 export interface LinksCta extends Struct.ComponentSchema {
   collectionName: 'components_links_ctas';
   info: {
@@ -201,6 +214,7 @@ export interface WhatSectionWhatSection extends Struct.ComponentSchema {
   attributes: {
     content: Schema.Attribute.Blocks;
     picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    servizi: Schema.Attribute.Component<'service.service', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -215,6 +229,7 @@ declare module '@strapi/strapi' {
       'featured-events.featured-events': FeaturedEventsFeaturedEvents;
       'featured-projects.featured-projects': FeaturedProjectsFeaturedProjects;
       'how-section.how-section': HowSectionHowSection;
+      'indirizzi-mail.indirizzi-mail': IndirizziMailIndirizziMail;
       'links.cta': LinksCta;
       'links.links': LinksLinks;
       'list.list': ListList;

@@ -634,12 +634,19 @@ export interface ApiContattiContatti extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    indirizzi_mail: Schema.Attribute.Component<
+      'indirizzi-mail.indirizzi-mail',
+      true
+    >;
+    info: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contatti.contatti'
     > &
       Schema.Attribute.Private;
+    map_lat: Schema.Attribute.String;
+    map_lng: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -957,6 +964,14 @@ export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
   };
   attributes: {
     bio: Schema.Attribute.Text;
+    cognome: Schema.Attribute.String & Schema.Attribute.Required;
+    consigli: Schema.Attribute.Component<'suggestion.suggestion', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -964,15 +979,14 @@ export interface ApiTeamTeam extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::team.team'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    nome: Schema.Attribute.String & Schema.Attribute.Required;
     picture: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
-    >;
+    > &
+      Schema.Attribute.Required;
     progetti: Schema.Attribute.Relation<'manyToMany', 'api::progetto.progetto'>;
     publishedAt: Schema.Attribute.DateTime;
-    suggestions: Schema.Attribute.Component<'suggestion.suggestion', true>;
-    surname: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

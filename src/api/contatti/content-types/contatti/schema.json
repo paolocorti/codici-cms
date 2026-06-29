@@ -13,6 +13,20 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "info": {
+      "type": "blocks"
+    },
+    "indirizzi_mail": {
+      "type": "component",
+      "component": "indirizzi-mail.indirizzi-mail",
+      "repeatable": true
+    },
+    "map_lat": {
+      "type": "string"
+    },
+    "map_lng": {
+      "type": "string"
     }
   }
 }

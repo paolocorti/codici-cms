@@ -21,6 +21,11 @@
     },
     "content": {
       "type": "blocks"
+    },
+    "servizi": {
+      "type": "component",
+      "component": "service.service",
+      "repeatable": true
     }
   },
   "config": {}
