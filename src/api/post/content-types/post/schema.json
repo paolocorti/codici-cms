@@ -34,7 +34,7 @@
         "audios"
       ]
     },
-    "author": {
+    "autore": {
       "type": "string"
     },
     "category": {

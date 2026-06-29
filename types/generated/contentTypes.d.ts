@@ -620,6 +620,35 @@ export interface ApiCallCall extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCodici404Codici404 extends Struct.SingleTypeSchema {
+  collectionName: 'codici404s';
+  info: {
+    displayName: 'Codici404';
+    pluralName: 'codici404s';
+    singularName: 'codici404';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descrizione: Schema.Attribute.Text;
+    highlights: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::codici404.codici404'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContattiContatti extends Struct.SingleTypeSchema {
   collectionName: 'contattis';
   info: {
@@ -773,6 +802,7 @@ export interface ApiPersonePersone extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -798,7 +828,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    author: Schema.Attribute.String;
+    autore: Schema.Attribute.String;
     category: Schema.Attribute.Enumeration<
       ['Ricerca', 'Viaggio', 'Call', 'Cartolina', 'Intervista']
     >;
@@ -946,6 +976,34 @@ export interface ApiRicercaRicerca extends Struct.CollectionTypeSchema {
     tipi: Schema.Attribute.Relation<'oneToMany', 'api::tipo.tipo'>;
     title: Schema.Attribute.String;
     uid: Schema.Attribute.UID<'title'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRicercheRicerche extends Struct.SingleTypeSchema {
+  collectionName: 'ricerches';
+  info: {
+    displayName: 'Ricerche';
+    pluralName: 'ricerches';
+    singularName: 'ricerche';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descrizione: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ricerche.ricerche'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1620,6 +1678,7 @@ declare module '@strapi/strapi' {
       'api::anno.anno': ApiAnnoAnno;
       'api::area.area': ApiAreaArea;
       'api::call.call': ApiCallCall;
+      'api::codici404.codici404': ApiCodici404Codici404;
       'api::contatti.contatti': ApiContattiContatti;
       'api::evento.evento': ApiEventoEvento;
       'api::home.home': ApiHomeHome;
@@ -1629,6 +1688,7 @@ declare module '@strapi/strapi' {
       'api::prodotto.prodotto': ApiProdottoProdotto;
       'api::progetto.progetto': ApiProgettoProgetto;
       'api::ricerca.ricerca': ApiRicercaRicerca;
+      'api::ricerche.ricerche': ApiRicercheRicerche;
       'api::team.team': ApiTeamTeam;
       'api::tema.tema': ApiTemaTema;
       'api::tipo.tipo': ApiTipoTipo;
