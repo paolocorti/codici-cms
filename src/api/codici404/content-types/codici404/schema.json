@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "codici404s",
+  "info": {
+    "singularName": "codici404",
+    "pluralName": "codici404s",
+    "displayName": "Codici404"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "descrizione": {
+      "type": "text"
+    },
+    "highlights": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post"
+    }
+  }
+}
