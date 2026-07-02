@@ -13,6 +13,11 @@
   "attributes": {
     "descrizione": {
       "type": "text"
+    },
+    "highlight": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tipo.tipo"
     }
   }
 }

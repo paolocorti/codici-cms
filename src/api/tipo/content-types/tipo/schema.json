@@ -11,8 +11,21 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "value": {
+    "titolo": {
       "type": "string"
+    },
+    "descrizione": {
+      "type": "text"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
