@@ -17,6 +17,9 @@
     "descrizione": {
       "type": "text"
     },
+    "anno": {
+      "type": "string"
+    },
     "picture": {
       "type": "media",
       "multiple": true,
